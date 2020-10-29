@@ -28,8 +28,8 @@ console.log (`${TempFar}°F is ${(TempFar-32)*5/9}°C.`)
 // EXERCISE 6
 
 function squareNumber(a) {
-    let result;
-    let content06 = document.querySelector('#Ex06');
+    var result;
+    var content06 = document.querySelector('#Ex06');
     content06.textContent = ("The result of squaring the number " + a + " is " + (result = Math.sqrt(a)).toFixed(2));
     return result;
 }
@@ -63,7 +63,6 @@ percentOf(160, 40);
 function areaOfCircle (radius) {
     let result;
     let content09 = document.querySelector('#Ex09');
-    var radiusResult = (result = (Math.PI * radius ** 2).toFixed(2));
     content09.textContent = ("The area for a circle with the radius " + radius + " is " + radiusResult);
     return result;
 }
@@ -78,7 +77,6 @@ function allFunctions (a) {
     console.log("All Functions: ");
     let half = halfNumber(a);
     let sqrRoot = squareNumber(half);
-    let areaOf = areaOfCircle(sqrRoot);
     let percentageOf = percentOf(areaOf, sqrRoot);
     return percentageOf;
 }
