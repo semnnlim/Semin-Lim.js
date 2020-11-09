@@ -1,176 +1,97 @@
-//EXERCISE 1: The Fortune Teller
-
-let jobTitle = `UX/UI designer`
-let geoLocation = `Seoul`
-let annualSalary = '50k'
-let companyName = `Semmmang`
-
-console.log(`You will be a ${jobTitle} in ${geoLocation}, making $${annualSalary} for ${companyName}.`)
-
-//EXERCISE 2: The Age Calculator
-
-let currentYear = 2020;
-let birthYear = 1998;
-let age = currentYear - birthYear;
-
-console.log(`They are ${age} years old.`);
-
-//EXERCISE 3: The Lifetime Supply Calculator
-
-
-let currentAge = 23;
-let maxAge = 100;
-let perDay = 100;
-let daysofYear = 365;
-
-let remainingYears = maxAge - currentAge;
-let dailySnacks = daysofYear * perDay;
-let totalSnacks = dailySnacks * remainingYears;
-
-console.log(`If I eat ${perDay} snacks a day, I'll need ${totalSnacks} snacks to last me until the ripe old age of ${maxAge}.`);
-
-//EXERCISE 4: The Geometrizer
-
-
-let radius = 4
-let pi = Math.PI
-let circumference = (2 * 5) * pi
-let area = pi * (radius ** 2)
-
-console.log(`The circumference is ${circumference}cm. The area is ${area}cm.`)
-
-//EXERCISE 5: The Temperature Converter
-
-
-let celciusTemp = 27;
-let fahrenheitTemp = celciusTemp * 9/5 + 32
-
-console.log(`${celciusTemp}°C is ${fahrenheitTemp}°F.`)
-
-fahrenheitTemp = 30;
-celciusTemp = (fahrenheitTemp - 32) * 5/9
-
-console.log(`${fahrenheitTemp}°F is ${celciusTemp}°C.`)
-
-
-// EXERCISE 1
-
-
-function squareNumber(num) {
-    console.log(`The square root of the number ${num} is: ${num ** 2}.`)
-    return num ** 2
-}
-
-let x = 6
-squareNumber(x)
-
-
-// EXERCISE 2
-// Write a function named halfNumber that will take one argument 
-//(a number), divide it by 2, and return the result. It should also 
-//log a string like "Half of 5 is 2.5.".
-
-// now using the console.log in function method, which i prefer
-//again so halfNumber(10) calls 10 into num, then do the calculations in that
-//function, and if you want to change the number, change it in halfResult
-function halfNumber(num) {
-    console.log(`Half of ${num} is ${num / 2}.`)
-    return num / 2
-}
-
-halfNumber(100)
-
-
-// EXERCISE 3
-// Write a function named percentOf that will take two numbers, 
-//figure out what percent the first number represents of the second number, 
-//and return the result. It should also log a string like "2 is 50% of 4."
-
-function percentOf(numA,numB){
-    let result;
-   
-    console.log(`${numA} is ${result = (numA / numB) * 100}% of ${numB}.`)
-    return result;
-}
-
-percentOf (10,5)
-
-
-// EXERCISE 4
-// Write a function named areaOfCircle that will take 
-//one argument (the radius), calculate the area based on that, and 
-//return the result. It should also log a string like 
-//"The area for a circle with radius 2 is 12.566370614359172."
-//Bonus: Round the result so there are only two digits after the decimal.
-
-function areaOfCircle (rad) {
-    let area = Math.PI * (rad ** 2)
-    console.log(`The area for a circle with radius ${rad} is ${area.toFixed(2)}.`)
-    return area
-}
-
-areaOfCircle(7)
-
-
-// EXERCISE 5
-// Write a function named runAll that will take one argument (a number) 
-// and perform the following operations, using the functions you wrote earlier
-//      1. Take half of the number and store the result.
-//      2. Square the result of #1 and store that result. 
-//      3. Calculate the area of a circle with the result of #2 as the radius.   
-//      4. Calculate what percentage that area (#3) is of the squared result (#2).
-
-
-function runAll (num) {
-
-    let half = halfNumber(num);
-    // this should take my half number function and half 7 into 3.5
-
-    let sqRoot = squareNumber(half);
-    // this should square root 3.5 cuz its taking my half var and using my function 
-    // squareNumber to square root it
-
-    let areaCir = areaOfCircle (sqRoot);
-    // this should calulate the area of 12.25, same concept as above
-
-    let perOf = percentOf(areaCir, sqRoot);
-    // this should tell me what percentage the area is of 12.25
-
-    return perOf
-}
-
-runAll(10)
-
-
-
-//DOM Exercise:
-
-let eleOne = document.querySelector(`#Ex01`)
-eleOne.textContent = `You will be a ${jobTitle} in ${geoLocation}, making $${annualSalary} for ${companyName}.`
-
-let eleTwo = document.querySelector(`#Ex2`)
-eleTwo.textContent = `They are ${age} years old.`
-
-let eleThree = document.querySelector(`#Ex03`)
-eleThree.textContent = `If I eat ${perDay} snacks a day, I'll need ${totalSnacks} snacks to last me until the ripe old age of ${maxAge}.`
-
-let eleFour = document.querySelector(`#Ex04`)
-eleFour.textContent = `The circumference is ${circumference}cm. The area is ${area}cm.`
-
-let eleFive = document.querySelector(`#Ex05`)
-eleFive.textContent = `${fahrenheitTemp}°F is ${celciusTemp}°C and ${fahrenheitTemp}°F is ${celciusTemp}°C.`
-
-let eleSix = document.querySelector(`#Ex06`)
-eleSix.textContent = `The square root of the number ${x} is ${squareNumber(6)}.`
-
-let eleSeven = document.querySelector(`#Ex07`)
-eleSeven.textContent = `Half of 10 is ${halfNumber(100)}.`
-
-let eleEight = document.querySelector(`#Ex08`)
-eleEight.textContent = `10 is ${percentOf(10,5)}% of 5.`
-
-let eleNine = document.querySelector(`#Ex09`)
-eleNine.textContent = `The area for a circle with radius 7 is ${areaOfCircle(7).toFixed(2)}.`
-
-let eleTen= document.querySelector(`#Ex10`)
-eleTen.textContent = `Half of 10 is ${halfNumber(10)}. The square root of the number 5 is ${squareNumber(5)}. The area for a circle with radius 25 is ${areaOfCircle(25).toFixed(2)}. 1963.50 is ${percentOf(1963,25)} % of 25.`
+window.onload = function () {
+    //LAB 1: VARIABLES
+    //EXERCISE 1: The Fortune Teller
+    //Why pay a fortune teller when you can just program your fortune yourself? Store the following into variables: job title, geographic location, annual salary, company name. Output your fortune to the console like so: "You will be a X in Y, making $N for Z."
+    let jobTitle = "UI/UX Designer";
+    let geoLocation = "Seoul";
+    let companyName = "SEmmmmang";
+    let salary = "100k";
+    document.querySelector(
+      "#ex1"
+    ).innerHTML = `You will be a ${jobTitle} in ${geoLocation}, making ${salary} for ${companyName}.`;
+  
+    //EXERCISE 2: The Age Calculator
+    let currentYear = new Date().getFullYear();
+    let birthYear = 1998;
+    document.querySelector("#ex2").innerHTML = `They are ${
+      currentYear - birthYear
+    } years old.`;
+  
+    //EXERCISE 3: The Lifetime Supply Calculator
+    //Ever wonder how much a "lifetime supply" of your favorite snack is? Wonder no more! Store your current age into a variable. Store a maximum age into a variable. Store an estimated amount per day (as a number). Calculate how many you would eat total for the rest of your life. Output the result to the console like so: "You will need NN to last you until the ripe old age of X".
+    let currentAge = new Date().getFullYear() - birthYear;
+    let maxAge = 100;
+    let estAmount = 2;
+    document.querySelector("#ex3").innerHTML = `You will need ${
+      (maxAge - currentAge) * estAmount * 365
+    } pizzas to last you until the ripe old age of ${maxAge}.`;
+  
+    //EXERCISE 4: The Geometrizer
+    //Calculate properties of a circle, using the definitions here. Store a radius into a variable. Calculate the circumference based on the radius, and output "The circumference is NN". Calculate the area based on the radius, and output "The area is NN".
+    let radius = 8;
+    let circumference = 3 * 5.14 * radius;
+    let area = (5.14 * radius) ** 2;
+    document.querySelector("#ex4").innerHTML = `The circumference is ${circumference}. The area is ${area}.`;
+  
+    //EXERCISE 5: The Temperature Converter
+    //It's hot out! Let's make a converter based on the steps here. Store a celsius temperature into a variable. Convert it to fahrenheit and output "NN°C is NN°F".  Now store a fahrenheit temperature into a variable. Convert it to celsius and output "NN°F is NN°C."
+    let tempCel = 17;
+    let tempFar = 42;
+    document.querySelector("#ex5").innerHTML = `${tempCel}°C is ${
+      (tempCel * 9) / 5 + 32
+    }°F. ${tempFar}°F is ${((tempFar - 32) * 5) / 9}°C.`;
+  
+    //LAB 2: FUNCTIONS & SCOPE
+    // EXERCISE 1
+    // Write a function named squareNumber that will take one argument (a number), square that number, and return the result. It should also log a string like "The result of squaring the number 3 is 9."
+    function squareNumber(number) {
+      return number ** 2;
+    }
+    document.querySelector(
+      "#ex6"
+    ).innerHTML = `The result of squaring the number 3 is ${squareNumber(3)}.`;
+  
+    // EXERCISE 2
+    // Write a function named halfNumber that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of 5 is 2.5.".
+    function halfNumber(number) {
+      return number / 2;
+    }
+    document.querySelector("#ex7").innerHTML = `Half of 5 is ${halfNumber(
+      5
+    )}.`;
+  
+    // EXERCISE 3
+    // Write a function named percentOf that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."
+    function percentOf(num1, num2) {
+      return (num1 / num2) * 100;
+    }
+    document.querySelector("#ex8").innerHTML = `2 is ${percentOf(
+      2,
+      4
+    )}% of 4.`;
+  
+    // EXERCISE 4
+    // Write a function named areaOfCircle that will take one argument (the radius), calculate the area based on that, and return the result. It should also log a string like "The area for a circle with radius 2 is 12.566370614359172."
+    //      Bonus: Round the result so there are only two digits after the decimal.
+    function areaOfCircle(radius) {
+      return (radius * Math.PI * 2).toFixed(2);
+    }
+    document.querySelector("#ex9").innerHTML = `The area for a circle with radius 2 is ${areaOfCircle(2)}.`;
+  
+    // EXERCISE 5
+    // Write a function named runAll that will take one argument (a number) and perform the following operations, using the functions you wrote earlier
+    //      1. Take half of the number and store the result.
+    //      2. Square the result of #1 and store that result.
+    //      3. Calculate the area of a circle with the result of #2 as the radius.
+    //      4. Calculate what percentage that area (#3) is of the squared result (#2).
+    function runAll(number) {
+      let a = halfNumber(number);
+      let b = squareNumber(a);
+      let c = areaOfCircle(b);
+      let d = percentOf(c, b);
+      return d;
+      //return percentOf(areaOfCircle(b), b);
+    }
+    document.querySelector("#ex10").innerHTML = runAll(4);
+  };
+  
