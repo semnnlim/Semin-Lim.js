@@ -166,10 +166,10 @@ eleSix.textContent = `The square root of the number ${x} is ${squareNumber(6)}.`
 let eleSeven = document.querySelector(`#Ex07`)
 eleSeven.textContent = `Half of 10 is ${halfNumber(100)}.`
 
-let eleEight = document.querySelector(`#Ex8`)
+let eleEight = document.querySelector(`#Ex08`)
 eleEight.textContent = `10 is ${percentOf(10,5)}% of 5.`
 
-let eleNine = document.querySelector(`#Ex9`)
+let eleNine = document.querySelector(`#Ex09`)
 eleNine.textContent = `The area for a circle with radius 7 is ${areaOfCircle(7).toFixed(2)}.`
 
 let eleTen= document.querySelector(`#Ex10`)
